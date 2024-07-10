@@ -1,0 +1,33 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2024-07-08-02
+      author: fuad
+      changes:
+        - createTable:
+            tableName: payment
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: orderId
+                  type: BIGINT
+              - column:
+                  name: paymentType
+                  type: VARCHAR(16)
+              - column:
+                  name: referenceNumber
+                  type: VARCHAR(64)
+              - column:
+                  name: paymentStatus
+                  type: VARCHAR(15)
+              - column:
+                  name: amount
+                  type: DECIMAL(16, 2)
+              - column:
+                  name: createdAt
+                  type: TIMESTAMP
