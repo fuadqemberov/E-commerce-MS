@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
-      id: 2024-07-08-02
+      id: 10-07-2024-08
       author: fuad
       changes:
         - createTable:
-            tableName: payment
+            tableName: payments
             columns:
               - column:
                   name: id
@@ -14,20 +14,32 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
-                  name: orderId
+                  name: order_id
                   type: BIGINT
+                  constraints:
+                    nullable: false
               - column:
-                  name: paymentType
-                  type: VARCHAR(16)
+                  name: payment_type
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
               - column:
-                  name: referenceNumber
-                  type: VARCHAR(64)
+                  name: reference_number
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
               - column:
-                  name: paymentStatus
-                  type: VARCHAR(15)
+                  name: payment_status
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
               - column:
                   name: amount
-                  type: DECIMAL(16, 2)
+                  type: DECIMAL(19, 2)
+                  constraints:
+                    nullable: false
               - column:
-                  name: createdAt
+                  name: created_at
                   type: TIMESTAMP
+                  constraints:
+                    nullable: false

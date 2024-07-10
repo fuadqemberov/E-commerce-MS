@@ -12,11 +12,13 @@ public enum PaymentMapper {
 
     public Payment buildPaymentEntity(CreatePaymentRequest request){
        return Payment.builder()
-               .paymnetStatus(SUCCESS)
+               .orderId(request.getOrderId())
+               .paymentStatus(SUCCESS)
                .referenceNumber(request.getReferenceNumber())
-               .amount(request.getPaymentAmount())
+               .amount(request.getAmount())
                .createdAt(LocalDateTime.now())
                .paymentType(request.getPaymentType())
+
                .build();
     }
 }

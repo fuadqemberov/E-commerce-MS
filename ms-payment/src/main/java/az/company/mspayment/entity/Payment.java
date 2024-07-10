@@ -14,8 +14,10 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
+import org.antlr.v4.runtime.misc.NotNull;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -41,8 +43,9 @@ public class Payment {
     String referenceNumber;
 
     @Enumerated(EnumType.STRING)
-    PaymentStatus paymnetStatus;
+    PaymentStatus paymentStatus;
 
+    @NonNull
     BigDecimal amount;
     LocalDateTime createdAt;
 }
