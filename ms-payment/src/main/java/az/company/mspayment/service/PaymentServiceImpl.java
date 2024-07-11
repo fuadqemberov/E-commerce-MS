@@ -19,6 +19,6 @@ public class PaymentServiceImpl implements PaymentService{
     public PaymentResponse pay(CreatePaymentRequest request) {
         Payment payment = PAYMENT_MAPPER.buildPaymentEntity(request);
         repository.save(payment);
-         return new PaymentResponse(payment.getId());
+        return new PaymentResponse(payment.getId());
     }
 }

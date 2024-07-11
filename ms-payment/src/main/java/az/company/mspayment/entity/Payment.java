@@ -2,6 +2,7 @@ package az.company.mspayment.entity;
 
 import az.company.mspayment.model.enums.PaymentStatus;
 import az.company.mspayment.model.enums.PaymentType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -45,7 +46,7 @@ public class Payment {
     @Enumerated(EnumType.STRING)
     PaymentStatus paymentStatus;
 
-    @NonNull
+    @Column(nullable = false)
     BigDecimal amount;
     LocalDateTime createdAt;
 }

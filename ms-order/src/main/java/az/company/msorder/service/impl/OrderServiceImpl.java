@@ -59,10 +59,12 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public OrderResponse getById(Long id) {
-        return repository.findById(id)
-                .map(ORDER_MAPPER::buildOrderResponse)
+        Order entity = repository.findById(id)
                 .orElseThrow(() -> new NotFoundException(
                         format(ORDER_NOT_FOUND.getMessage(), id)
                 ));
+      ResponseProduct responseProduct =  cilent.getById(entity.getProductId());
+      return ORDER_MAPPER.buildOrderResponse(entity,responseProduct);
+
     }
 }

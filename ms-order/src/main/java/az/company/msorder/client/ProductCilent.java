@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@FeignClient(name="ms-product",url = "http://localhost:8081/v1/prodcuts",configuration = CustomErrorDecoder.class)
+@FeignClient(name="ms-product",url = "http://localhost:8081/v1/products",configuration = CustomErrorDecoder.class)
 public interface ProductCilent {
 
     @PostMapping("/reduce-quantity")
