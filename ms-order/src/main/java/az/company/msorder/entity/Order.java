@@ -15,6 +15,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -34,10 +36,16 @@ public class Order {
     Long id;
     Long productId;
     Integer quantity;
+
     @Enumerated(EnumType.STRING)
     OrderStatus status;
     BigDecimal amount;
+
+    @CreationTimestamp
     LocalDateTime createdAt;
+
+    @UpdateTimestamp
+    LocalDateTime updatedAt;
 
 
 }
