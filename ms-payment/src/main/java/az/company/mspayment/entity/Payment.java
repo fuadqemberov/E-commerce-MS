@@ -2,6 +2,7 @@ package az.company.mspayment.entity;
 
 import az.company.mspayment.model.enums.PaymentStatus;
 import az.company.mspayment.model.enums.PaymentType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -14,8 +15,10 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
+import org.antlr.v4.runtime.misc.NotNull;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -41,8 +44,9 @@ public class Payment {
     String referenceNumber;
 
     @Enumerated(EnumType.STRING)
-    PaymentStatus paymnetStatus;
+    PaymentStatus paymentStatus;
 
+    @Column(nullable = false)
     BigDecimal amount;
     LocalDateTime createdAt;
 }

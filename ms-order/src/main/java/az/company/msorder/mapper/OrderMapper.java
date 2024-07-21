@@ -4,6 +4,7 @@ import az.company.msorder.entity.Order;
 import az.company.msorder.model.enums.OrderStatus;
 import az.company.msorder.model.request.CreateOrderRequest;
 import az.company.msorder.model.response.OrderResponse;
+import az.company.msorder.model.response.ResponseProduct;
 
 import java.time.LocalDateTime;
 
@@ -24,13 +25,14 @@ public enum OrderMapper {
 
 
 
-    public OrderResponse buildOrderResponse(Order order){
+    public OrderResponse buildOrderResponse(Order order, ResponseProduct product){
         return OrderResponse.builder()
                 .id(order.getId())
                 .productId(order.getProductId())
                 .amount(order.getAmount())
                 .createdAt(order.getCreatedAt())
                 .quantity(order.getQuantity())
+                .responseProduct(product)
                 .status(order.getStatus()).build();
     }
 }

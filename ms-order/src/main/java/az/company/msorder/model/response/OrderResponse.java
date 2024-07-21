@@ -23,4 +23,5 @@ public class OrderResponse {
     OrderStatus status;
     BigDecimal amount;
     LocalDateTime createdAt;
+    ResponseProduct  responseProduct;
 }

@@ -22,5 +22,5 @@ public class CreatePaymentRequest {
     PaymentStatus status;
     String referenceNumber;
     String paymentDate;
-    BigDecimal paymentAmount;
+    BigDecimal amount;
 }

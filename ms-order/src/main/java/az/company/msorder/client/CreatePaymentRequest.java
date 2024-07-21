@@ -18,8 +18,6 @@ import java.math.BigDecimal;
 public class CreatePaymentRequest {
     Long orderId;
     PaymentType paymentType;
-    //PaymentStatus status;
     String referenceNumber;
-    String paymentDate;
     BigDecimal paymentAmount;
 }

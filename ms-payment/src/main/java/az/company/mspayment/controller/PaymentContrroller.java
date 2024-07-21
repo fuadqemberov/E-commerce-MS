@@ -21,7 +21,7 @@ public class PaymentContrroller {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public PaymentResponse pay(@RequestBody CreatePaymentRequest request){
-        return  service.pay(request);
+        return service.pay(request);
     }
 
 }

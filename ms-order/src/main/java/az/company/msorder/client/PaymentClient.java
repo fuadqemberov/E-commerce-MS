@@ -13,5 +13,5 @@ public interface PaymentClient {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    void PaymentResponse (@RequestBody CreatePaymentRequest request);
+    PaymentResponse pay(@RequestBody CreatePaymentRequest request);
 }

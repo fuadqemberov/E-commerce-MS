@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: 2024-07-08-02
+      id: 10-07-2023-01
       author: fuad
       changes:
         - createTable:
@@ -14,18 +14,18 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
-                  name: productId
+                  name: product_id
                   type: BIGINT
                   constraints:
                     nullable: false
               - column:
                   name: quantity
-                  type: INTEGER
+                  type: INT
                   constraints:
                     nullable: false
               - column:
                   name: status
-                  type: VARCHAR(50)
+                  type: VARCHAR(255)
                   constraints:
                     nullable: false
               - column:
@@ -34,7 +34,12 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
-                  name: createdAt
+                  name: created_at
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
                   type: TIMESTAMP
                   constraints:
                     nullable: false
