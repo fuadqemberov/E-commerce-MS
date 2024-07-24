@@ -2,7 +2,7 @@ spring:
   application:
     name: ms-product
   datasource:
-    url: jdbc:postgresql://localhost:5432/product_db
+    url: jdbc:postgresql://localhost:5432/product_db?currentSchema=product_schema
     username: postgres
     password: password
     driver-class-name: org.postgresql.Driver
@@ -10,6 +10,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+      default_schema: product_schema
 
 
 server:
